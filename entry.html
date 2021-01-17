@@ -1,0 +1,23 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+ show_entry
+{% endblock %}
+
+{% block body %}
+
+
+<form action="{% url 'edit' name %}" method = "post">
+  {% csrf_token %}
+
+{{show_entry}}
+
+<button class="btn btn-outline-success my-2 my-sm-0" type="submit">edit</button>
+
+</form>
+
+
+{{entries}}
+
+
+{% endblock %}
